@@ -29,7 +29,9 @@ const Section: React.FC<{ text: string; href: string }> = ({ href, text }) => (
           visibility: visible;
           opacity: 0;
           transform: scale(150%);
-          transition: opacity 0.4s linear, transform 0.2s linear;
+          letter-spacing: 0.4rem;
+          transition: opacity 0.4s linear, transform 0.2s linear,
+            letter-spacing 0.4s linear 0.1s;
         }
 
         a::after {
