@@ -32,10 +32,6 @@ const GlobalStyle = () => (
       font-weight: 400;
     }
 
-    h1 {
-      font-size: 64px;
-    }
-
     * {
       font-family: "Arial";
     }

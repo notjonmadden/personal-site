@@ -51,7 +51,7 @@ const Home: NextPage<Props> = ({ avatarData }) => (
     </Head>
     <main>
       <img src={avatarData} />
-      <h1>Hi, I'm Jon. I build apps.</h1>
+      <h1>Full Time Dev // Part Time DM</h1>
       <ul>
         <li>
           <Section href="me" text="About Me" />
@@ -101,10 +101,21 @@ const Style = () => (
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
+      height: 85vh;
     }
 
     img {
       border-radius: 100%;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin: 1rem 0 2rem;
     }
 
     ul {
