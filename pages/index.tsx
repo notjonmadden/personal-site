@@ -11,7 +11,7 @@ interface Props {
 const Section: React.FC<{ text: string; href: string }> = ({ href, text }) => (
   <Link href={href}>
     <a data-text={text}>
-      {text}
+      <span>{text}</span>
       <style jsx>{`
         a {
           font-size: 2rem;
@@ -19,32 +19,22 @@ const Section: React.FC<{ text: string; href: string }> = ({ href, text }) => (
 
           display: flex;
           justify-content: center;
-
-          visibility: visible;
-          transform: scale(100%);
-          transition: transform none, visibility none;
         }
 
-        a:hover {
+        span {
           visibility: hidden;
-          transform: scale(200%);
-          transition: transform 0.2s ease-in, visibility 0s linear 0.2s;
-          z-index: 0;
         }
 
-        a:not(:last-child) {
-          margin-bottom: 2rem;
+        a:hover > span {
+          visibility: visible;
+          opacity: 0;
+          transform: scale(150%);
+          transition: opacity 0.4s linear, transform 0.2s linear;
         }
 
         a::after {
           position: absolute;
-        }
-
-        a:hover::after {
-          visibility: visible;
-          scale: 0.5;
           content: attr(data-text);
-          z-index: 1;
         }
       `}</style>
     </a>
@@ -118,6 +108,10 @@ const Style = () => (
     ul {
       list-style: none;
       padding: 0;
+    }
+
+    li:not(:last-child) {
+      margin-bottom: 2rem;
     }
   `}</style>
 );
